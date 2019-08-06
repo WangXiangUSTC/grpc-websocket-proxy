@@ -43,6 +43,7 @@ type Logger interface {
 
 func (p *Proxy) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if !websocket.IsWebSocketUpgrade(r) {
+		p.logger.Warnln("is not web socket upgrade")
 		p.h.ServeHTTP(w, r)
 		return
 	}
