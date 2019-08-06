@@ -140,7 +140,7 @@ func isClosedConnError(err error) bool {
 }
 
 func (p *Proxy) proxy(w http.ResponseWriter, r *http.Request) {
-	p.logger.Print("start proxy")
+	p.logger.Warnln("start proxy")
 	var responseHeader http.Header
 	// If Sec-WebSocket-Protocol starts with "Bearer", respond in kind.
 	// TODO(tmc): consider customizability/extension point here.
